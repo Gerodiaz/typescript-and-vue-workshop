@@ -11,17 +11,17 @@ const dishList = ref<Dish[]>([
   {
     id: '7d9f3f17-964a-4e82-98e5-ecbba4d709a1',
     name: 'Ghost Pepper Poppers',
-    status: 'Want to Try',
+    status: 'Vegetarian',
   },
   {
     id: '5c986b74-fa02-4a22-98f2-b1ff3559e85e',
     name: 'A Little More Chowder Now',
-    status: 'Recommended',
+    status: 'Pescetarian',
   },
   {
     id: 'c113411d-1589-414f-a283-daf7eedb631e',
     name: 'Full Laptop Battery',
-    status: 'Do Not Recommend',
+    status: 'Keto',
   },
 ])
 const showNewForm = ref(false)
