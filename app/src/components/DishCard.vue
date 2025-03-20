@@ -14,11 +14,11 @@ export default defineComponent({
   computed: {
     statusColor() {
       switch (this.dish.status) {
-        case 'Want to Try':
+        case 'Vegetarian':
           return 'is-warning'
-        case 'Recommended':
+        case 'Pescetarian':
           return 'is-success'
-        case 'Do Not Recommend':
+        case 'Keto':
           return 'is-danger'
         default:
           return ''
