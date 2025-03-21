@@ -53,6 +53,10 @@ const hideForm = () => {
   showNewForm.value = false
 }
 
+const updateFilterText = (event: KeyboardEvent) => {
+  filterText.value = (event.target as HTMLInputElement).value
+}
+
 onMounted(() => {
   const route = useRoute()
   if (route.query.new) {
@@ -84,10 +88,16 @@ onMounted(() => {
               <button @click="showNewForm = true" class="button is-success">New</button>
             </p>
 
-            <div class="level-item is-hidden-tablet-only">
+            <div class="level-item is-hidden-widescreen-only">
               <div class="field has-addons">
                 <p class="control">
-                  <input class="input" type="text" placeholder="Dish name" v-model="filterText" />
+                  <input
+                    class="input"
+                    type="text"
+                    placeholder="Dish name"
+                    :value="filterText"
+                    @keyup.enter="updateFilterText"
+                  />
                 </p>
                 <p class="control">
                   <button class="button">Search</button>
