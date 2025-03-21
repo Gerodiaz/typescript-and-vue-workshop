@@ -20,6 +20,12 @@ const newRestaurant = ref<Restaurant>({
   status: 'Want to Try',
 })
 
+const updateName = (event: InputEvent) => {
+  if (event.data === ' ') {
+    newRestaurant.value.name = (event.target as HTMLInputElement).value
+  }
+}
+
 const addRestaurant = () => {
   emit('add-new-restaurant', newRestaurant.value)
 }
@@ -37,10 +43,11 @@ onMounted(() => {
   <form @submit.prevent>
     <div class="field">
       <div class="field">
-        <label for="name" class="label">Name</label>
+        <label for="name" class="label">Name: {{ newRestaurant.name }}</label>
         <div class="control">
           <input
-            v-model="newRestaurant.name"
+            :value="newRestaurant.name"
+            @input="updateName"
             type="text"
             class="input is-large"
             placeholder="Beignet and the Jets"
