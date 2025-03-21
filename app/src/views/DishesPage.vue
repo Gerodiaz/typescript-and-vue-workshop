@@ -89,7 +89,7 @@ onMounted(() => {
               <button @click="showNewForm = true" class="button is-success">New</button>
             </p>
 
-            <div class="level-item is-hidden-tablet-only">
+            <div class="level-item is-hidden-widescreen-only">
               <div class="field has-addons">
                 <p class="control">
                   <input
